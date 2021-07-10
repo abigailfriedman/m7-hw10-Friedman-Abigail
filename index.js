@@ -8,8 +8,7 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
-//var name = nameSpan.textContent;
-document.cookie= "name=" + nameSpan.textContent
+document.cookie = "name=" + nameSpan.textContent
 
 var notes = localStorage.getItem('notes')
 if (notes) {
@@ -18,10 +17,8 @@ if (notes) {
 } else {
   textarea.textContent = 'No Notes'
 }
+
  
-//function name() {
-  //document.cookie = nameSpan.textContent;
-  //}
 
 formEl.onsubmit = function(e) {
   // prevents form submission
@@ -29,12 +26,9 @@ formEl.onsubmit = function(e) {
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
-
-var textInput = document.getElementById('notes').value;
-localStorage.setItem('notes', textInput);
-textInput =localStorage.getItem('notes');
-//console.log('title Saved')
-
+  notes = textarea.value
+  localStorage.setItem('notes', notes)
+  textarea.textContent = notes
  
 
   // triggers thumbs up animation
@@ -47,8 +41,9 @@ clear.onclick = function() {
   // YOUR CODE HERE
 
 //textarea.value.clear();
-deleteCookie();
-formEl.localStorage.clear();
+//deleteCookie();
+//textarea.value.clear('notes')
+localStorage.removeItem('notes');
 
 
   // triggers thumbs up animation
@@ -64,6 +59,12 @@ formEl.elements.save.onanimationend = endThumbsUp
 clear.onanimationend = endThumbsUp
 
 
+
+
+//var name = nameSpan.textContent;
+//function name() {
+  //document.cookie = nameSpan.textContent;
+  //}
 
 
 //var notes = localStorage.getItem('notes')
@@ -93,3 +94,8 @@ clear.onanimationend = endThumbsUp
   //} else {
   //textarea.textContent = 'No Notes'
   //};
+
+  //var textInput = document.getElementById('notes').value;
+//localStorage.setItem('notes', textInput);
+//textInput =localStorage.getItem('notes');
+//console.log('title Saved')
