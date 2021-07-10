@@ -31,8 +31,10 @@ formEl.onsubmit = function(e) {
   localStorage.setItem('notes', notes)
   textarea.textContent = notes
  
+  namePart = nameSpan.Content.value
   document.cookie = "name=" + nameSpan.textContent
-  nameSpan.textContent = nameCookie
+  nameSpan.textContent = namePart
+  //nameSpan.textContent = nameCookie
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
