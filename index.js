@@ -8,12 +8,33 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
+function name() {
+document.cookie = nameSpan.textContent;
+}
+
+var notes = localStorage.getItem('notes')
+if (notes) {
+  textarea.textContent = notes
+  textarea.value = notes
+} else {
+  textarea.textContent = 'No Notes'
+}
+ 
+
+
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
+
+var textInput = document.getElementById('notes').value;
+localStorage.setItem('notes', textInput);
+textInput =localStorage.getItem('notes');
+//console.log('title Saved')
+
+ 
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
@@ -23,6 +44,11 @@ clear.onclick = function() {
   // Clear textarea's value
   // Clear localstorage's content
   // YOUR CODE HERE
+
+//textarea.value.clear();
+deleteCookie();
+formEl.localStorage.clear();
+
 
   // triggers thumbs up animation
   this.classList.add('emoji')
@@ -35,3 +61,34 @@ function endThumbsUp() {
 
 formEl.elements.save.onanimationend = endThumbsUp
 clear.onanimationend = endThumbsUp
+
+
+
+
+//var notes = localStorage.getItem('notes')
+//if (notes) {
+//var notesInput = textarea.value;
+//localStorage.setItem ('textarea', notesInput);
+//} else{
+//textarea.textContent = 'No Notes'
+//};
+
+
+//if (notes) {
+  //textarea.textContent = notes
+  //textarea.value = notes
+//} else {
+  //textarea.textContent = 'No Notes'
+//}
+
+
+//textarea.value = localStorage.getItem('notes')
+
+
+
+///if (notes) {
+  //var notesInput = textarea.value; 
+  //localStorage.setItem ('textarea', notesInput);
+  //} else {
+  //textarea.textContent = 'No Notes'
+  //};
