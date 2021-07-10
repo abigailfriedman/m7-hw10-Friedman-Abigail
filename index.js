@@ -8,15 +8,28 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
+//var nameCookie = "name=" + nameSpan.textContent
+//nameCookie = document.cookie.split(';')
+
+//var nameCookie = nameSpan.textContent
+//document.cookie = "name=" + nameCookie
+
+var cookie = document.cookie.split(';').map(cookie => cookie.split('='))
 var nameCookie = "name=" + nameSpan.textContent
-document.cookie = nameCookie
+//document.cookie = cookie[1]
+//nameSpan.textContent = cookie
+
+console.log(cookie)
+console.log (nameCookie)
+
+
+//document.cookie.split(';') = "name=" + nameSpan.textContent
 
 var notes = localStorage.getItem('notes')
 if (notes) {
-  textarea.textContent = notes
   textarea.value = notes
 } else {
-  textarea.textContent = 'Type notes here and then press save!'
+  textarea.value = 'Type notes here and then press save!'
 }
  
 
@@ -30,9 +43,15 @@ formEl.onsubmit = function(e) {
   localStorage.setItem('notes', notes)
   textarea.textContent = notes
  
-  namePart = nameSpan.Content.value
-  document.cookie = "name=" + nameSpan.textContent
-  nameSpan.textContent = namePart
+  var nameCookie = nameSpan.textContent
+  document.cookie = "name=" + nameCookie
+
+  //document.cookie = nameCookie
+  //nameSpan.textContent = nameCookie
+
+  //var namePart = nameSpan.Content.value
+  //document.cookie = "name=" + nameSpan.textContent
+  //nameSpan.textContent = namePart
   //nameSpan.textContent = nameCookie
 
   // triggers thumbs up animation
@@ -62,7 +81,6 @@ clear.onanimationend = endThumbsUp
 
 
 
-
 //var name = nameSpan.textContent;
 //function name() {
   //document.cookie = nameSpan.textContent;
@@ -85,9 +103,7 @@ clear.onanimationend = endThumbsUp
   //textarea.textContent = 'No Notes'
 //}
 
-
 //textarea.value = localStorage.getItem('notes')
-
 
 
 ///if (notes) {
@@ -101,3 +117,19 @@ clear.onanimationend = endThumbsUp
 //localStorage.setItem('notes', textInput);
 //textInput =localStorage.getItem('notes');
 //console.log('title Saved')
+
+
+//var nameCookie = document.cookie.split(';')
+//.find(function(nameCookie) {
+  //return nameCookie.startsWith('Name')
+//})
+//if(nameCookie) {
+  //nameSpan.textContent = nameCookie
+//}
+
+
+//var nameCookie = "name=" + nameSpan.textContent
+//nameCookie = document.cookie.split(';')
+
+//var nameCookie = nameSpan.textContent
+//document.cookie = "name=" + nameCookie

@@ -5,3 +5,4 @@
 ### this was a good starting place for me but ended up not using: https://medium.com/@mirandawashburn/notes-app-with-local-storage-14165975ba86
 ### https://www.w3schools.com/js/js_cookies.asp 
 ### https://stackoverflow.com/questions/15968911/how-to-clear-text-area-with-a-button-in-html-using-javascript/15968947 
+### https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie 
