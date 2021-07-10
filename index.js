@@ -18,7 +18,6 @@ if (notes) {
 } else {
   textarea.textContent = 'Type notes here and then press save!'
 }
-
  
 
 formEl.onsubmit = function(e) {
@@ -46,10 +45,8 @@ clear.onclick = function() {
   // YOUR CODE HERE
 
 //textarea.value.clear();
-//deleteCookie();
-//textarea.value.clear('notes')
 localStorage.removeItem('notes');
-
+textarea.value = "Type notes here and then press save!";
 
   // triggers thumbs up animation
   this.classList.add('emoji')
