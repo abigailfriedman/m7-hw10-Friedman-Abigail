@@ -8,14 +8,15 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
-document.cookie = "name=" + nameSpan.textContent
+var nameCookie = "name=" + nameSpan.textContent
+document.cookie = nameCookie
 
 var notes = localStorage.getItem('notes')
 if (notes) {
   textarea.textContent = notes
   textarea.value = notes
 } else {
-  textarea.textContent = 'No Notes'
+  textarea.textContent = 'Type notes here and then press save!'
 }
 
  
@@ -30,6 +31,8 @@ formEl.onsubmit = function(e) {
   localStorage.setItem('notes', notes)
   textarea.textContent = notes
  
+  document.cookie = "name=" + nameSpan.textContent
+  nameSpan.textContent = nameCookie
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
