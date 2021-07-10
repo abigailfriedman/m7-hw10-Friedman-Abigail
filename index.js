@@ -8,9 +8,8 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
-function name() {
-document.cookie = nameSpan.textContent;
-}
+//var name = nameSpan.textContent;
+document.cookie= "name=" + nameSpan.textContent
 
 var notes = localStorage.getItem('notes')
 if (notes) {
@@ -20,7 +19,9 @@ if (notes) {
   textarea.textContent = 'No Notes'
 }
  
-
+//function name() {
+  //document.cookie = nameSpan.textContent;
+  //}
 
 formEl.onsubmit = function(e) {
   // prevents form submission
