@@ -15,10 +15,8 @@ if (notes) {
   textarea.value = 'Type notes here and then press save!'
 }
 
-var nameCookie = "name=" + nameSpan.textContent
-nameCookie = document.cookie.split(';')
-console.log(nameCookie)
-
+ var nameCookie = document.cookie.split(';')
+  nameSpan.textContent = nameCookie
 
  
 formEl.onsubmit = function(e) {
@@ -32,7 +30,7 @@ formEl.onsubmit = function(e) {
   textarea.textContent = notes
  
   var nameCookie = nameSpan.textContent
-  document.cookie = "name=" + nameCookie
+  document.cookie = nameCookie
   
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
