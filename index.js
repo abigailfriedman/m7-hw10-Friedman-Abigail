@@ -8,31 +8,19 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
-//var nameCookie = "name=" + nameSpan.textContent
-//nameCookie = document.cookie.split(';')
-
-//var nameCookie = nameSpan.textContent
-//document.cookie = "name=" + nameCookie
-
-var cookie = document.cookie.split(';').map(cookie => cookie.split('='))
-var nameCookie = "name=" + nameSpan.textContent
-//document.cookie = cookie[1]
-//nameSpan.textContent = cookie
-
-console.log(cookie)
-console.log (nameCookie)
-
-
-//document.cookie.split(';') = "name=" + nameSpan.textContent
-
 var notes = localStorage.getItem('notes')
 if (notes) {
   textarea.value = notes
 } else {
   textarea.value = 'Type notes here and then press save!'
 }
- 
 
+var nameCookie = "name=" + nameSpan.textContent
+nameCookie = document.cookie.split(';')
+console.log(nameCookie)
+
+
+ 
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
@@ -45,15 +33,7 @@ formEl.onsubmit = function(e) {
  
   var nameCookie = nameSpan.textContent
   document.cookie = "name=" + nameCookie
-
-  //document.cookie = nameCookie
-  //nameSpan.textContent = nameCookie
-
-  //var namePart = nameSpan.Content.value
-  //document.cookie = "name=" + nameSpan.textContent
-  //nameSpan.textContent = namePart
-  //nameSpan.textContent = nameCookie
-
+  
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
 }
@@ -81,12 +61,12 @@ clear.onanimationend = endThumbsUp
 
 
 
+
+
 //var name = nameSpan.textContent;
 //function name() {
   //document.cookie = nameSpan.textContent;
   //}
-
-
 //var notes = localStorage.getItem('notes')
 //if (notes) {
 //var notesInput = textarea.value;
@@ -133,3 +113,7 @@ clear.onanimationend = endThumbsUp
 
 //var nameCookie = nameSpan.textContent
 //document.cookie = "name=" + nameCookie
+
+
+
+
