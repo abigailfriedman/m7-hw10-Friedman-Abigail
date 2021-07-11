@@ -59,7 +59,7 @@ clear.onanimationend = endThumbsUp
 
 
 
-
+//CODE GRAVEYARD
 
 //var name = nameSpan.textContent;
 //function name() {
